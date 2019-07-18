@@ -1,1 +1,3 @@
 <h1><%= @student.to_s %></h1>
+<p>This student is currently <%=@student.activation_status %>.</p>
+<%= button_to "Activation", activate_student_path(@student.id),method: :get %>

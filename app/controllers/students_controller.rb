@@ -6,6 +6,12 @@ class StudentsController < ApplicationController
   end
 
   def show
+    @student = Student.find(params[:id])
+  end
+  
+  def activate
+    set_student.update_attribute(:active,  !set_student.active) 
+    redirect_to student_url
   end
 
   private
